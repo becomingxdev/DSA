@@ -1,6 +1,5 @@
 # DSA
 
-Starting just before 1 night of exam. Let's see how much we may go.
 
 <h2>Syllabus:</h2>
 Module 1: Introduction to Algorithm Analysis 
