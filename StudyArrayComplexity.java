@@ -2,17 +2,30 @@
 
 public class StudyArrayComplexity {
 
+    // public static void insertAtIndex(int[] arr, int data, int index) {
+
+    //     arr[arr.length - 1] = data;
+
+    //     for(int i = arr.length - 1; i > index; i--) {
+
+    //         int temp = arr[i - 1];
+    //         arr[i - 1] = arr[i];
+    //         arr[i] = temp;
+
+    //     }
+    // }
+
     public static void insertAtIndex(int[] arr, int data, int index) {
-
-        arr[arr.length - 1] = data;
-
-        for(int i = arr.length - 1; i > index; i--) {
-
-            int temp = arr[i - 1];
-            arr[i - 1] = arr[i];
-            arr[i] = temp;
-
+        // 1. O(n) WORK: Create the "hole" by shifting elements to the right.
+        // We start from the last element (arr.length - 1) and shift down to the index.
+        for (int i = arr.length - 1; i > index; i--) {
+            // Shift: Move the element at i-1 to the position i.
+            // This is a single copy operation per element.
+            arr[i] = arr[i - 1]; 
         }
+
+        // 2. O(1) WORK: Insert the data into the now-empty 'hole'.
+        arr[index] = data;
     }
 
     // Helper main method for testing:
